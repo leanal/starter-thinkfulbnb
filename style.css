@@ -7,7 +7,7 @@ body {
 h2 {
   font-size: 26px;
   font-weight: 400;
-  margin: 0 10px 10px 10px;
+  margin: 0 50px 10px 50px;
   text-align: center;
 }
 
@@ -41,6 +41,10 @@ main img {
   flex-direction: column;
 }
 
+.group img {
+  width: 100%;
+}
+
 .item {
   flex: 1;
   margin: 10px;
@@ -48,6 +52,7 @@ main img {
 
 .item-double {
   flex: 2;
+  margin: 10px;
 }
 
 /* -------  Navigation ------- */
@@ -56,6 +61,35 @@ header {
   background-color: #ff385c;
   padding: 20px 20px 0 20px;
   text-align: center;
+}
+
+header nav {
+  /* Changes the display property from its default to `flex`. */
+  display: flex;
+  /* Centers an element defined as `display: flex`. */
+  justify-content: center;
+}
+
+header nav ul {
+  /* Changes the display property from its default to `flex`. */
+  display: flex;
+  /*
+    You want the navigation to display in a single row. This is 
+    the default value for `display: flex`, so you don't need
+    to define its `flex-direction` in this case.
+  */
+
+  /*
+    Removes the default padding to the left of the
+    unordered list.
+  */
+  padding-left: 0;
+
+  /*
+    Removes the bullet points from the list items within the 
+    unordered list.
+  */
+  list-style: none;
 }
 
 .logo {
@@ -93,6 +127,7 @@ form select,
 form input {
   margin-bottom: 20px;
   width: 180px;
+  float: right;
 }
 
 form button {
@@ -117,3 +152,64 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+@media all and (min-width: 480px) {
+  h2 {
+    font-size: 26px;
+    font-weight: 400;
+    margin: 0 10px 10px 10px;
+    text-align: center;
+  }
+  .group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .item {
+    flex: 1;
+    margin: 10px;
+  }
+
+  .item-double {
+    flex: 2;
+    margin: 10px;
+  }
+
+  header {
+    background-color: #ff385c;
+    padding: 20px 20px 0 20px;
+    text-align: left;
+  }
+
+  header nav {
+    /* Changes the display property from its default to `flex`. */
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* -------  Search Form ------- */
+  form {
+    border: 2px solid #ff385c;
+    padding: 10px;
+  }
+
+  form label {
+    font-weight: bold;
+    display: block;
+  }
+
+  form select,
+  form input {
+    margin-bottom: 0;
+    width: 180px;
+    float: left;
+  }
+
+  .space-between {
+    align-content: space-between;
+  }
+
+  .flex-end {
+    align-items: flex-end;
+  }
+}
